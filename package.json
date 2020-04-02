@@ -1,0 +1,31 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --forceExit"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.610.0",
+    "body-parser": "^1.19.0",
+    "create-react-app": "^3.3.1",
+    "express": "^4.17.1",
+    "git": "^0.1.5",
+    "jose": "^1.22.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.6",
+    "react": "^16.12.0",
+    "socket.io": "^2.3.0",
+    "supertest": "^4.0.2",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "jest": "^25.2.4"
+  }
+}
