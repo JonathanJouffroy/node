@@ -36,7 +36,7 @@ console.log('connected to mongodb')
 
 app.use('/v1/users', router)
 app.use('/v1/products', routerProduct)
-app.use('/v1/orders', routerOrder)
+app.use('/v1/orders', routerOrder) 
 app.use('/v1/sendSms', routerSms)
 app.use('/v1/routerS3', routerS3 )
 app.use('/v1/routerCS3', routerCS3)
