@@ -6,20 +6,15 @@ var routerSms = require('./routerSms.js')
 var routerS3 = require('./routerS3.js')
 var routerCS3 = require('./routerCS3')
 var bodyParser = require('body-parser')
-var mongoose = require('mongoose')
+//var mongoose = require('mongoose')
 var app = express();
 var server = require('http').Server(app)
 var io = require('socket.io')(server)
+const connectDB = require('./DB/connection');
 
 
+connectDB();
 
-mongoose.Promise = Promise
-mongoose.connect('mongodb://localhost:27017/madb', { useNewUrlParser: true, useUnifiedTopology: true })
-var db = mongoose.connection
-db.on('error', console.error.bind(console, "error:"))
-db.once('open', () => {
-console.log('connected to mongodb')
- })
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -29,6 +24,15 @@ app.use((req,res,next) => {
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
     next()
 })
+
+
+/*mongoose.Promise = Promise
+mongoose.connect('mongodb://localhost:27017/madb', { useNewUrlParser: true, useUnifiedTopology: true })
+var db = mongoose.connection
+db.on('error', console.error.bind(console, "error:"))
+db.once('open', () => {
+console.log('connected to mongodb')
+ })*/
 
 app.use('/v1/users', router)
 app.use('/v1/products', routerProduct)
