@@ -49,10 +49,7 @@ app.get('/', function(req, res) {
 
 app.io = io;
  
-var port = 3030
-app.get('port') === process.env.PORT
-var hostname ='localhost'
-server.listen(port, function(){
+server.listen(process.env.PORT || 3030 , function(){
 	console.log("Server is running"); 
 });
 
