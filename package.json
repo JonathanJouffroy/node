@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest --ForceExit",
     "start": "node index.js"
   },
   "jest": {
