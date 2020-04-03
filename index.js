@@ -50,6 +50,7 @@ app.get('/', function(req, res) {
 app.io = io;
  
 var port = 3030
+app.get('port') === process.env.PORT
 var hostname ='localhost'
 server.listen(port, function(){
 	console.log("Server is running"); 
